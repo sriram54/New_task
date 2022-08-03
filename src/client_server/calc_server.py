@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
-
+# importing requied models
 import rospy
 from math import sqrt
 from ros_essentials_cpp.srv import ros_calculator
 from ros_essentials_cpp.srv import ros_calculatorResponse
 
+# function callback
 def handle_varibale(var):
     add = var.a + var.b + var.c
     print(f"Received {var.a}, {var.b}, {var.c}, returning: {add} ")
@@ -19,7 +20,8 @@ def handle_varibale(var):
     print(f"Received {var.a}, returning: {square}")
     square_root = sqrt(var.a)
     print(f'Received {var.a}, returning: {square_root}\n\n')
-
+    
+# storing respone in variable, and assigning value for respone varibales in srv flies(eg: int64 float64)
     resp = ros_calculatorResponse()
     resp.add = add
     resp.sub = sub
@@ -30,11 +32,12 @@ def handle_varibale(var):
 
     return resp
 
-    
-
-
+# creating nodes, topic and Service
 if __name__ == "__main__":
     rospy.init_node('calculator_sever')
     s = rospy.Service('ros_calc', ros_calculator, handle_varibale)
     print("Ready to do your calculations")
     rospy.spin()
+    
+    
+    ''' its a simple calculator which does operations like addition, subtraction, multiplication, division, exponent by 2 and square root '''
