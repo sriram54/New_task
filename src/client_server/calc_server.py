@@ -19,7 +19,7 @@ def handle_varibale(var):
     square = var.a*var.a
     print(f"Received {var.a}, returning: {square}")
     square_root = sqrt(var.a)
-    print(f'Received {var.a}, returning: {square_root}')
+    print(f'Received {var.a}, returning: {square_root}\n\n')
 
     resp = ros_calculatorResponse()
     resp.add = add
