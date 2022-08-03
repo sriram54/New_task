@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 
-from re import A
 import rospy
 from math import sqrt
 from ros_essentials_cpp.srv import ros_calculator
