@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# importing requied models
+# importing requied moduels
 import rospy
 from math import sqrt
 from ros_essentials_cpp.srv import ros_calculator
